@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .layout{
+            width: 600px;
+            margin: 0 auto;
+        }
+        .layout>table{
+            margin-top: 30px;
+        }
+        .wrap{
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+        .wrap tr{
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        .wrap tr:nth-child(even){
+            background-color: #f1f1f1;
+        }
+        .wrap th{
+            color: #fff;
+            background-color: #4caf50;
+            padding: 8px 8px;
+            font-weight: bold;
+        }
+        .wrap td{
+            padding: 8px 8px;
+        }
+        .wrap.h{
+            border: 0
+        }
+        .wrap.h th{
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <table class="wrap">
+            <tbody>
+                <tr>
+                    <th>酷跑人物</th>
+                    <th>钻石</th>
+                    <th>值得买星数</th>
+                </tr>
+                <tr>
+                    <td>齐天大圣</td>
+                    <td>1000</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>曙光女神</td>
+                    <td>3000</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>猫小魅</td>
+                    <td>1000</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>暗黑大圣</td>
+                    <td>2888</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>双枪小帅</td>
+                    <td>免费</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="wrap h">
+            <tbody>
+                <tr>
+                    <th>酷跑人物</th>
+                    <th>钻石</th>
+                    <th>值得买星数</th>
+                </tr>
+                <tr>
+                    <td>齐天大圣</td>
+                    <td>1000</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>曙光女神</td>
+                    <td>3000</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>猫小魅</td>
+                    <td>1000</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>暗黑大圣</td>
+                    <td>2888</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>双枪小帅</td>
+                    <td>免费</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
