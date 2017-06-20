@@ -5,6 +5,7 @@ some small ui example:
 | --- | --- |
 | 小表格 | http://shenzekun.cn/MyUi/small_table.html |
 | 小按钮 | http://shenzekun.cn/MyUi/some_btn.html |
+| 三角形 | http://shenzekun.cn/MyUi/triangle.html |
 
 
 
