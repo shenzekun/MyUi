@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>alert</title>
+    <style>
+    .layout{
+        width: 600px;
+        margin: 0 auto;
+    }
+    .layout>div{
+        margin-top: 30px;
+    }
+    .circle{
+        padding: 1px 16px;
+        color: #fff;
+        line-height: 1.5;
+        border-radius: 5px;
+        transition: all .5s;      
+    }
+    .circle:hover{
+        box-shadow: 6px 6px 10px 0 rgba(0, 0, 0,0.35);
+    }
+    .circle>h3{
+        margin: 10px 0;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .circle .close{
+        float: right;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .circle.success{
+        background-color: #4CAF50;
+    }
+    .circle.info{
+        background-color: #2196F3;
+    }
+    .circle.danger{
+        background-color: #f44336;
+    }
+    .circle.warn{
+        background-color: #ff9800;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <div class="circle success">
+            <a class="close">×</a>
+            <h3>成功</h3>
+            <p>成功的秘诀，在永不改变既定的目的</p>
+        </div>
+
+        <div class="circle info">
+            <span class="close">×</span>
+            <h3>信息</h3>
+            <p>未来要么电子商务要么无商可务</p>
+        </div>
+
+        <div class="circle danger">
+            <span class="close">×</span>
+            <h3>危机</h3>
+            <p>逆境帮助生存，危机提高警觉，困境刺激思维</p>
+        </div>
+
+        <div class="circle warn">
+            <span class="close">×</span>
+            <h3>警告</h3>
+            <p>少壮不努力老大徒伤悲</p>
+        </div>
+    </div>
+</body>
+
+</html>
