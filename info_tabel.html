@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>信息表</title>
+    <style>
+        .layout {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        .card {
+            padding-bottom: 16px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+        }
+
+        .card form {
+            margin: 16px;
+        }
+
+        .card>h2 {
+            padding: 15px 16px;
+            color: #fff;
+            background-color:#ff6e1d;
+        }
+
+        .card label {
+            color: #757575;
+            vertical-align: middle;
+        }
+
+        .card input[type=text],
+        textarea {
+            display: block;
+            width: 100%;
+            padding: 8px 0;
+            border: none;
+            border-bottom: 1px solid #808080;
+        }
+
+        .card input,
+        textarea:focus {
+            outline: none;
+        }
+
+        .card form>div {
+            margin-top: 16px;
+        }
+
+        .helf {
+            width: 50%;
+            float: left;
+            line-height: 1.4;
+        }
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .card input[type=submit]{
+            padding: 8px 16px;
+            color: #fff;
+            border: 0;
+            background-color: #ff6e1d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <div class="card">
+            <h2>信息收集表</h2>
+            <form action="" method="post">
+                <div>
+                    <label for="name">姓名</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div>
+                    <label for="qq">QQ</label>
+                    <input type="text" name="qq" id="qq">
+                </div>
+                <div>
+                    <label for="words">要说的话</label>
+                    <textarea name="words" id="words" cols="30" rows="4"></textarea>
+                </div>
+                <div class="clearfix">
+                    <div class="helf">
+                        <input type="checkbox" name="tour" id="tour">
+                        <label for="tour">tour</label>
+                        <br>
+                        <input type="checkbox" name="game" id="game">
+                        <label for="game">game</label>
+                        <br>
+                        <input type="checkbox" name="study" id="study">
+                        <label for="study">study</label>
+                    </div>
+
+                    <div class="helf">
+                        <input type="radio" name="tour1" id="tour1" checked>
+                        <label for="tour1">tour</label>
+                        <br>
+                        <input type="radio" name="tour1" id="study1">
+                        <label for="study1">study</label>
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" value="提交">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

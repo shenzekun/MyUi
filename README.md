@@ -8,6 +8,7 @@ some small ui example:
 | 三角形 | http://shenzekun.cn/MyUi/triangle.html |
 | 卡片 | http://shenzekun.cn/MyUi/Card.html |
 | alter | http://shenzekun.cn/MyUi/alert.html |
+| 信息表 | http://shenzekun.cn/MyUi/info_tabel.html
 
 
 
