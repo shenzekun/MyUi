@@ -9,6 +9,8 @@ some small ui example:
 | 卡片 | http://shenzekun.cn/MyUi/Card.html |
 | alter | http://shenzekun.cn/MyUi/alert.html |
 | 信息表 | http://shenzekun.cn/MyUi/info_tabel.html |
+| 模态框 | http://shenzekun.cn/MyUi/modal.html |
+| 导航栏 | http://shenzekun.cn/MyUi/navigation.html |
 
 
 
