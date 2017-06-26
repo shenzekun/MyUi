@@ -11,6 +11,7 @@ some small ui example:
 | 信息表 | http://shenzekun.cn/MyUi/info_tabel.html |
 | 模态框 | http://shenzekun.cn/MyUi/modal.html |
 | 导航栏 | http://shenzekun.cn/MyUi/navigation.html |
+| 列表 | http://shenzekun.cn/MyUi/landscape.html |
 
 
 
