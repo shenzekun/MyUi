@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>仿简书文章缩略</title>
+    <style>
+        .container {
+            width: 1000px;
+            margin: 0 auto;
+            border-top: 2px solid #f0f0f0;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .left {
+            float: left;
+            width: 680px;
+        }
+
+        .author {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .author>img {
+            width: 70px;
+            border-radius: 70px;
+            border: 2px solid #eee;
+            vertical-align: middle;
+        }
+
+        .name {
+            margin: 0 10px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .date {
+            color: #969696;
+        }
+
+        .title {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: transparent;
+            display: inline-block;
+            padding: 5px 5px;
+            border: 2px solid #f17c67;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #f17c67;
+            text-decoration: none;
+        }
+
+        aside {
+            width: 300px;
+            margin-left: 700px;
+        }
+
+        aside img {
+            width: 100%;
+            margin-top: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .ellipsis{
+            line-height: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="author">
+                <img src="http://upload.jianshu.io/users/upload_avatars/5308475/e6473249-62eb-4752-91b4-5fc9f2da8cf9.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240"
+                    alt="">
+                <span class="name">Moorez</span>
+                <span class="date">一天前</span>
+            </div>
+            <div class="title">要怎样才能不负20岁？</div>
+            <p class="ellipsis">
+                有很多人在20岁之前，就功成名就。有很多人在20岁就已经身价上亿。﻿ 我们与他们不同，我们不是他们，我们很平凡，20岁的我们可能除了梦想就一无所有。﻿﻿ 我们可以很穷，我们可...
+            </p>
+            <button>大学生活</button>
+        </div>
+
+        <aside>
+            <img src="http://upload-images.jianshu.io/upload_images/5233861-bef8b687762663d2.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/375/h/300"
+                alt="">
+        </aside>
+    </div>
+</body>
+
+</html>
