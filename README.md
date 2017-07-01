@@ -14,6 +14,7 @@ some small ui example:
 | 列表 | http://shenzekun.cn/MyUi/landscape.html |
 | 仿简书文章缩略 | http://shenzekun.cn/MyUi/jianshu_breviary |
 | 项目介绍 | http://shenzekun.cn/MyUi/introduce.html |
+| 简历 | http://shenzekun.cn/MyUi/resume.html |
 
 
 
