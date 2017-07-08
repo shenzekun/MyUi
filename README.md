@@ -17,6 +17,7 @@ some small ui example:
 | 简历 | http://shenzekun.cn/MyUi/resume.html |
 | Travel | http://shenzekun.cn/MyUi/Travel/index.html |
 | 登录 | http://shenzekun.cn/MyUi/login.html |
+| 魔兽官网 | http://shenzekun.cn/MyUi/moshou.html |
 
 
 
