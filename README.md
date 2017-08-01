@@ -18,6 +18,7 @@ some small ui example:
 | Travel | http://shenzekun.cn/MyUi/Travel/index.html |
 | 登录 | http://shenzekun.cn/MyUi/login.html |
 | 魔兽官网 | http://shenzekun.cn/MyUi/moshou.html |
+| tab 切换 | http://shenzekun.cn/MyUi/tabchange.html |
 
 
 
