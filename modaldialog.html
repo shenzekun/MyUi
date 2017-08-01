@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>原生js写一个模态框</title>
+    <style>
+        .modal-dialog {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-dialog a {
+            text-decoration: none;
+            color: saddlebrown;
+        }
+
+        .modal-ct {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            background: #fff;
+        }
+
+        .modal-ct .header {
+            position: relative;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .modal-ct .header h3 {
+            margin: 0;
+            padding-left: 10px;
+        }
+
+        .modal-ct .header .close {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            line-height: 1;
+        }
+
+        .modal-ct .content {
+            padding: 10px;
+        }
+
+        .modal-ct .footer {
+            padding: 10px;
+            border-top: 1px solid #eee;
+        }
+
+        .modal-ct .footer::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .modal-ct .footer .btn {
+            float: right;
+            margin-left: 10px;
+        }
+
+        .open {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button type="button" id="btn-dialog">Click</button>
+
+    <div class="modal-dialog">
+        <div class="modal-ct">
+            <div class="header">
+                <h3>I am the title</h3>
+                <a href="#" class="close">x</a>
+            </div>
+            <div class="content">
+                <p>hello</p>
+                <p>world</p>
+            </div>
+            <div class="footer">
+                <a href="#" class="btn">ensure</a>
+                <a href="#" class="btn" id="close">cancel</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var btnClick=document.querySelector("#btn-dialog");
+        var modalDialog=document.querySelector(".modal-dialog");
+        var modalDialogContent=document.querySelector(".modal-ct");
+        var close=document.querySelector(".close");
+        var close2=document.querySelector("#close");
+        btnClick.addEventListener('click',function(){
+            modalDialog.classList.add("open");
+        });
+        close.addEventListener('click',function(){
+            modalDialog.classList.remove("open");
+        });
+        modalDialog.addEventListener('click',function(){
+            modalDialog.classList.remove("open");
+        });
+        modalDialogContent.addEventListener('click',function(e){
+            e.stopPropagation();
+        });
+        close2.addEventListener('click',function(){
+            modalDialog.classList.remove("open");
+        });
+    </script>
+</body>
+
+</html>
