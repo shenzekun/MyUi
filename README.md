@@ -20,6 +20,7 @@ some small ui example:
 | 魔兽官网 | http://shenzekun.cn/MyUi/moshou.html |
 | tab 切换 | http://shenzekun.cn/MyUi/tabchange.html |
 | 原生 js 模态框| http://shenzekun.cn/MyUi/modaldialog.html |
+| 加载更多 | http://shenzekun.cn/MyUi/loadingmore/index.html |
 
 
 
