@@ -96,10 +96,11 @@
         $(".header>li").on('click', function () {
             var $this = $(this);
             var index = $this.index();
-            console.log(index);
+            var contentHeight = $(".content").height();
+            console.log(contentHeight);
             $this.addClass('active').siblings().removeClass('active');
             $('.content> li').eq(index).animate({
-                top: -200 * index
+                top: -contentHeight * index
             }, function () {
                 $(this).siblings().animate({
                     top: 0
