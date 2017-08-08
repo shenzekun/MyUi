@@ -21,7 +21,7 @@ some small ui example:
 | tab 切换 | http://shenzekun.cn/MyUi/tabchange.html |
 | 原生 js 模态框| http://shenzekun.cn/MyUi/modaldialog.html |
 | tab 切换加强版 | http://shenzekun.cn/MyUi/tabchange2.html |
-| 导航 | http://shenzekun.cn/MyUi/nav.html |
+| 导航 | http://shenzekun.cn/MyUi/navigation2.html |
 
 
 
