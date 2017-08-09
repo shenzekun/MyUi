@@ -23,7 +23,7 @@ some small ui example:
 | tab 切换2 | http://shenzekun.cn/MyUi/tabchange2.html |
 | 导航 | http://shenzekun.cn/MyUi/nav.html |
 | tab切换3 | http://shenzekun.cn/MyUi/tabchange3.html |
-| 添加 | http://shenzekun.cn/MyUi/add/html |
+| 添加 | http://shenzekun.cn/MyUi/add.html |
 
 
 
