@@ -24,6 +24,6 @@ some small ui example:
 | 导航 | http://shenzekun.cn/MyUi/nav.html |
 | tab切换3 | http://shenzekun.cn/MyUi/tabchange3.html |
 | 添加 | http://shenzekun.cn/MyUi/add.html |
-
+| 图片懒加载 | http://shenzekun.cn/MyUi/lazyloadimg.html |
 
 
