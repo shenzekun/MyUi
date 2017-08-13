@@ -25,6 +25,6 @@ some small ui example:
 | tab切换3 | http://shenzekun.cn/MyUi/tabchange3.html |
 | 添加 | http://shenzekun.cn/MyUi/add.html |
 | 图片懒加载 | http://shenzekun.cn/MyUi/lazyloadimg.html |
-| 渐变轮播 | http://shenzekun.cn/MyUi/carousel.html |
+| 渐变轮播 | http://shenzekun.cn/MyUi/carousel.html|
 
 
