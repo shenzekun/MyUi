@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+    <meta charset="utf-8">
+    <title>渐变轮播</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 320px;
+            margin: 0 auto;
+        }
+
+        .carousel {
+            position: relative;
+            width: 320px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .carousel .img-ct {
+            position: absolute;
+            overflow: hidden;
+        }
+
+        .carousel .img-ct img {
+            width: 320px;
+            height: 200px;
+        }
+
+        .carousel .img-ct>li {
+            float: left;
+        }
+
+        .carousel .img-ct:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .carousel .arrow {
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+        }
+
+        .carousel .arrow:hover {
+            opacity: .7;
+        }
+
+        .carousel .pre {
+            left: 10px;
+        }
+
+        .carousel .next {
+            right: 10px;
+        }
+
+        .carousel .bullet {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .carousel .bullet>li {
+            display: inline-block;
+            width: 30px;
+            height: 5px;
+            border: 1px solid #ccc;
+            background: #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .carousel .bullet>li.active {
+            background-color: #fff;
+            border: 1px solid #fff
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="carousel">
+            <ul class="img-ct">
+                <li><img src="http://cdn.jirengu.com/book.jirengu.com/img/8.jpg" alt=""></li>
+                <li><img src="http://cdn.jirengu.com/book.jirengu.com/img/9.jpg" alt=""></li>
+                <li><img src="http://cdn.jirengu.com/book.jirengu.com/img/10.jpg" alt=""></li>
+                <li><img src="http://cdn.jirengu.com/book.jirengu.com/img/11.jpg" alt=""></li>
+            </ul>
+            <a href="#" class="pre arrow">＜</a>
+            <a href="#" class="next arrow">＞</a>
+            <ul class="bullet">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var $ct = $('.img-ct'),
+            $items = $ct.children(),
+            $pre = $('.pre'),
+            $next = $('.next'),
+            $bullet = $('.bullet'),
+            imgWidth = $items.width(),
+            imgCount = $ct.children().size();
+
+
+
+        var curIdx = 0;
+        var isAnimate = false;
+
+        $next.on('click', function () {
+            playNext();
+            stopAuto();
+            autoPlay();
+        });
+        $pre.on('click', function () {
+            playPre();
+            stopAuto();
+            autoPlay();
+        });
+        $bullet.find('li').on('click', function () {
+            var idx = $(this).index();
+            play(idx);
+        });
+
+        play(0);
+        autoPlay();
+
+
+        function playNext() {
+            play((curIdx + 1) % imgCount);
+        }
+
+        function playPre() {
+            play((imgCount + curIdx - 1) % imgCount);
+        }
+
+        function play(idx) {
+            if (isAnimate) return;
+            isAnimate = true;
+            $items.eq(curIdx).fadeOut(500);
+            $items.eq(idx).fadeIn(500, function () {
+                isAnimate = false;
+            });
+
+            curIdx = idx;
+            setBullet();
+        }
+
+        function setBullet() {
+            $bullet.children().removeClass('active')
+                .eq(curIdx).addClass('active');
+        }
+
+        function stopAuto() {
+            clearInterval(clock);
+        }
+
+        function autoPlay() {
+            clock = setInterval(function () {
+                playNext();
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>
