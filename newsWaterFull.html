@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新闻瀑布流</title>
+    <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .wrap {
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        #pic-ct {
+            position: relative;
+        }
+
+        #pic-ct .item {
+            position: absolute;
+            padding: 0 0 10px 0;
+            width: 280px;
+            margin: 10px;
+            border: 1px solid #DFDFDF;
+            background-color: #fff;
+            opacity: 0;
+            transition: all .8s;
+        }
+
+        #pic-ct .item img {
+            margin: 10px;
+            width: 258px;
+        }
+
+        #pic-ct .item .title {
+            height: 25px;
+            margin: 0 12px;
+            border-bottom: 1px solid #DBDBDB;
+        }
+
+        #pic-ct .detail {
+            font-size: 13px;
+            line-height: 1.8;
+            margin: 10px 15px 0;
+            color: #777371;
+        }
+
+        #load {
+            visibility: hidden;
+            height: 20px;
+        }
+
+        .hide {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul id="pic-ct">
+            <!-- 用于计算 item 的宽度和列数但是不显示出来 -->
+            <li class="item hide"></li>
+        </ul>
+        <div id="load">我是看不见的</div>
+    </div>
+
+    <script>
+        var page = 1;//页数
+        var num = 10;//获取数据的数量
+        var colSumHeight = [];//存储每列数的高度
+        var nodeWidth = $('.item').outerWidth(true);
+        var colNum = parseInt($("#pic-ct").width() / nodeWidth); //计算一共有多少列
+        for (var i = 0; i < colNum; i++) {
+            colSumHeight[i] = 0;
+        }
+
+        start();
+
+        $(window).on('scroll',function(){
+            if (isVisible("#load")) {
+                start();
+            }
+        });
+
+        function start() {
+            getData(function (newItems) {
+                console.log(newItems);
+                $.each(newItems, function (index, value) {
+                    var $node = getNode(value);
+                    console.log($node);
+                    $node.find("img").load(function () {
+                        $("#pic-ct").append($node);
+                        waterFull($node);
+                    });
+                });
+            });
+        }
+
+        function waterFull($node) {
+            var minValue = Math.min.apply(null, colSumHeight);
+            console.log(minValue);
+            var minIndex = colSumHeight.indexOf(minValue);
+            console.log(minIndex);
+            $node.css({
+                left: nodeWidth * minIndex,
+                top: colSumHeight[minIndex],
+                opacity: 1
+            });
+            colSumHeight[minIndex] += $node.outerHeight(true);
+            $('#pic-ct').height(Math.max.apply(null,colSumHeight));
+        }
+
+        function isVisible(el) {
+            var scrollTop = $(window).scrollTop(),
+                windowHeight = $(window).height(),
+                nodeHeight = $(el).outerHeight(true),
+                nodeOffSetTop = $(el).offset().top;
+            if (scrollTop > nodeHeight + nodeOffSetTop || scrollTop < nodeOffSetTop - windowHeight) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        function getData(callback) {
+            $.ajax({
+                url: 'http://platform.sina.com.cn/slide/album_tech',
+                dataType: 'jsonp',
+                jsonp: 'jsoncallback',
+                data: {
+                    app_key: '1271687855',
+                    num: num,
+                    page: page
+                }
+            }).done(function (ret) {
+                if (ret && ret.status && ret.status.code === "0") {
+                    callback(ret.data); //如果数据没问题，那么生成节点并摆放好位置
+                    page++;
+                } else {
+                    console.log('get error data');
+                }
+            });
+        }
+
+        function getNode(item) {
+            var html = '';
+            html += '<li class="item">';
+            html += ' <a href="' + item.url + '" class="link"><img src="' + item.img_url + '" alt=""></a>';
+            html += ' <h4 class="title">' + item.short_name + '</h4>';
+            html += '<p class="detail">' + item.short_intro + '</p>';
+            html += '</li>';
+            return $(html);
+        }
+    </script>
+</body>
+
+</html>
