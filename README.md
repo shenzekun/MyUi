@@ -27,5 +27,5 @@ some small ui example:
 | 图片懒加载 | http://shenzekun.cn/MyUi/lazyloadimg.html |
 | 渐变轮播 | http://shenzekun.cn/MyUi/carousel.html |
 | 新闻瀑布流 | http://shenzekun.cn/MyUi/newsWaterFull.html |
-
+| 木桶布局  | http://shenzekun.cn/MyUi/Barrel.html |
 
