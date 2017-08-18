@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>木桶布局</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <style>
+        .img-ct {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .row::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .row .box {
+            float: left;
+        }
+
+        .row .box img {
+            margin: 4px;
+            padding: 2px;
+            border: 1px solid #ccc;
+        }
+
+        .load {
+            visibility: hidden;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="img-ct">
+
+        </div>
+        <div class="load">我看不到</div>
+    </div>
+    <script>
+        function Barrel($ct) {
+            this.$ct = $ct;
+            this.rowList = [];
+            this.loadImg();
+        }
+        Barrel.prototype = {
+            loadImg: function () {
+                var _this = this;
+                var imgs = this.getImgsUrls(20);
+                $.each(imgs, function (index, img) {
+                    var img = new Image();
+                    img.src = imgs[index];
+                    img.onload = function () {
+                        var imgInfo = {
+                            target: $(img),
+                            width: (300 * img.width) / img.height,
+                            height: 300
+                        }
+                        _this.render(imgInfo);
+                    }
+                });
+            },
+            getImgsUrls: function (num) {
+                var height, height, urls = [];
+                for (var i = 0; i < num; i++) {
+                    width = Math.floor(Math.random() * 400 + 400);
+                    height = Math.floor(Math.random() * 300 + 300);
+                    urls.push("https://unsplash.it/" + width + "/" + height + "/?random");
+                }
+                return urls;
+            },
+            render: function (imgInfo) {
+                var _this = this,
+                    rowWidth = 0,
+                    rowHeight = 0,
+                    containerWidth = this.$ct.width(),
+                    lastImg = imgInfo;
+                _this.rowList.push(imgInfo);
+                $.each(_this.rowList, function (index, imgInfo) {
+                    rowWidth += imgInfo.width;
+                    if (rowWidth > containerWidth) {
+                        _this.rowList.pop();
+                        rowWidth = rowWidth - lastImg.width;
+                        rowHeight = containerWidth * 300 / rowWidth;
+                        _this.layout(rowHeight);
+                        _this.rowList = [];
+                        _this.rowList.push(lastImg);
+                    }
+                });
+
+            },
+            layout: function (rowHeight) {
+                var $rowContainer = $('<div class="row"></div>');
+                $.each(this.rowList, function (index, imgInfo) {
+                    var $imgContainer = $('<div class="box"></div>');
+                    var imgWidth = rowHeight * imgInfo.width / 300;
+                    var $img = imgInfo.target;
+                    $img.height(rowHeight);
+                    $img.width(imgWidth - 14);
+                    $imgContainer.append($img);
+                    $rowContainer.append($imgContainer);
+                });
+                this.$ct.append($rowContainer);
+            }
+        }
+        new Barrel($('.img-ct'));
+    </script>
+</body>
+
+</html>
