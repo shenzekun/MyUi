@@ -460,19 +460,42 @@
 
     <script>
         
-        $('.header li').on('click', function () {
-            $(this).addClass("active").siblings().removeClass("active");
-            var index=$(this).index();
-            $(this).parents('.tab').find(".panel").removeClass('active');
-            $(this).parents('.tab').find('.panel').eq(index).addClass("active");
+        function Tabchange($ct) {
+            this.$ct=$ct;
+            this.bind();
+        }
 
-        })
-        $(".item").on('mouseenter', function () {
-            $(this).addClass("hover");
-        });
-        $(".item").on('mouseleave', function () {
-            $(this).removeClass("hover");
-        });
+        Tabchange.prototype.bind=function () {
+            this.$ct.find(".header li").on('click',function () {
+                $(this).addClass("active").siblings().removeClass("active");
+                var index=$(this).index();
+                $(this).parents('.tab').find(".panel").removeClass('active');
+                $(this).parents('.tab').find('.panel').eq(index).addClass("active");
+            });
+            this.$ct.find(".item").on('mouseenter',function () {
+                $(this).addClass("hover");
+            })
+            this.$ct.find(".item").on('mouseleave',function () {
+                $(this).removeClass("hover");
+            })
+        }
+
+        new Tabchange($(".tab").eq(0));
+        new Tabchange($(".tab").eq(1));
+        
+//        $('.header li').on('click', function () {
+//            $(this).addClass("active").siblings().removeClass("active");
+//            var index=$(this).index();
+//            $(this).parents('.tab').find(".panel").removeClass('active');
+//            $(this).parents('.tab').find('.panel').eq(index).addClass("active");
+//
+//        })
+//        $(".item").on('mouseenter', function () {
+//            $(this).addClass("hover");
+//        });
+//        $(".item").on('mouseleave', function () {
+//            $(this).removeClass("hover");
+//        });
     </script>
 </body>
 
