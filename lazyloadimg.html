@@ -56,18 +56,13 @@
         <li><img src="" data-src='http://cdn.jirengu.com/book.jirengu.com/img/18.jpg' alt=""></li>
     </ul>
     <script>
-        var clock;
-        lazyLoadImg();
-        $(window).on('scroll', function () {
-            if (clock) {
-                clearTimeout(clock);
-            }
-            clock = setTimeout(function () {
-                lazyLoadImg();
-            }, 300);
-        })
-
-        function isVisible($element) {
+        function Exposure($target, callback) {
+            this.$target = $target;
+            this.callback = callback;
+            this.init();
+            this.bind();
+        }
+        Exposure.prototype.isVisible = function ($element) {
             var windowHeight = $(window).height(),
                 scrollTop = $(window).scrollTop(),
                 offsetTop = $($element).offset().top,
@@ -78,22 +73,85 @@
                 return true;
             }
         }
-
-        function isLoad($el) {
+        Exposure.prototype.isLoad = function ($el) {
             return $($el).attr("src") === $($el).attr("data-src");
         }
+        Exposure.prototype.lazyLoadImg = function () {
+            var _this = this;
+            if (_this.isVisible(this.$target) && !_this.isLoad(this.$target)) {
+                _this.callback(_this.$target);
+            }
+        }
+        Exposure.prototype.init = function () {
+            this.clock;
+            this.lazyLoadImg();
+        }
+        Exposure.prototype.bind = function () {
+            var _this = this;
+            $(window).on('scroll', function () {
+                if (_this.clock) {
+                    clearTimeout(_this.clock);
+                }
+                _this.clock = setTimeout(function () {
+                    _this.lazyLoadImg();
+                }, 300);
+            });
+        }
+
+        var Lazy = (function () {
+            return {
+                init: function ($target, callback) {
+                    $target.each(function (index, target) {
+                        new Exposure($(target), callback);
+                    });
+                }
+            };
+        })();
+        Lazy.init($("img"), function ($node) {
+            loadImg($node);
+        })
 
         function loadImg($img) {
             $($img).attr("src", $($img).attr("data-src"));
         }
+        // var clock;
+        // lazyLoadImg();
+        // $(window).on('scroll', function () {
+        //     if (clock) {
+        //         clearTimeout(clock);
+        //     }
+        //     clock = setTimeout(function () {
+        //         lazyLoadImg();
+        //     }, 300);
+        // })
 
-        function lazyLoadImg() {
-            $("img").each(function () {
-                if (isVisible($(this)) && !isLoad($(this))) {
-                    loadImg($(this));
-                }
-            });
-        }
+        // function isVisible($element) {
+        //     var windowHeight = $(window).height(),
+        //         scrollTop = $(window).scrollTop(),
+        //         offsetTop = $($element).offset().top,
+        //         elementHeight = $($element).outerHeight(true);
+        //     if (scrollTop > offsetTop + elementHeight || scrollTop < offsetTop - windowHeight) {
+        //         return false;
+        //     } else {
+        //         return true;
+        //     }
+        // }
+
+        // function isLoad($el) {
+        //     return $($el).attr("src") === $($el).attr("data-src");
+        // }
+
+        // function loadImg($img) {
+        //     $($img).attr("src", $($img).attr("data-src"));
+        // }
+
+        // function lazyLoadImg() {
+        //     $("img").each(function () {
+        //         if (isVisible($(this)) && !isLoad($(this))) {
+        //             loadImg($(this));
+        //         }
+        //     });
+        // }
     </script>
 </body>
 
