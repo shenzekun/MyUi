@@ -28,4 +28,5 @@ some small ui example:
 | 渐变轮播 | http://shenzekun.cn/MyUi/carousel.html |
 | 新闻瀑布流 | http://shenzekun.cn/MyUi/newsWaterFull.html |
 | 木桶布局  | http://shenzekun.cn/MyUi/Barrel.html |
+| 日历 | http://shenzekun.cn/MyUi/date.html |
 
