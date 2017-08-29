@@ -15,7 +15,7 @@ some small ui example:
 | 仿简书文章缩略 | http://shenzekun.cn/MyUi/jianshu_breviary |
 | 项目介绍 | http://shenzekun.cn/MyUi/introduce.html |
 | 简历 | http://shenzekun.cn/MyUi/resume.html |
-| Travel | http://shenzekun.cn/MyUi/Travel/index.html |
+| Travel | http://shenzekun.cn/MyUi/Travel/requirejs/index.html |
 | 登录 | http://shenzekun.cn/MyUi/login.html |
 | 魔兽官网 | http://shenzekun.cn/MyUi/moshou.html |
 | tab 切换 | http://shenzekun.cn/MyUi/tabchange.html |
