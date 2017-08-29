@@ -3,7 +3,7 @@ var GoTop = (function () {
         this.$eleCt = $eleCt;
         this.$scrollCt = $scrollCt;
         this.top = top;
-        this.$btn = $('<a class="go-top" style="display: none"><img src="../../img/top.png"></img></a>');
+        this.$btn = $('<a class="go-top" style="display: none"><img src="img/top.png"></img></a>');
         this.$eleCt.append(this.$btn);
         this.bind();
     }
