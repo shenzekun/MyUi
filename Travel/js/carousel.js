@@ -24,7 +24,7 @@ var carousel = (function () {
         if (this.isAnimate) return;
         this.isAnimate = true;
         this.$items.eq(this.curIdx).fadeOut(0);
-        this.$items.eq(idx).fadeIn(500, function () {
+        this.$items.eq(idx).fadeIn(0, function () {
             _this.isAnimate = false;
         });
         this.curIdx = idx;
