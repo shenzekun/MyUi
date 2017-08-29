@@ -496,7 +496,6 @@ li:nth-of-type(2n) .timeline-panel {
     font-size: 16px;
     font-weight: 700;
     display: inline-block;
-    
 }
 
 #COMMEND .picture {
@@ -504,12 +503,15 @@ li:nth-of-type(2n) .timeline-panel {
     position: relative;
 }
 
-#showPicture{
+#showPicture {
     position: relative;
 }
-#showPicture>li{
+
+#showPicture>li {
     position: absolute;
 }
+
+
 /*footer*/
 
 #footer {
@@ -540,9 +542,10 @@ li:nth-of-type(2n) .timeline-panel {
     outline: 0;
 }
 
+
 /*go-top*/
 
-.go-top{
+.go-top {
     position: fixed;
     bottom: 13px;
     right: 10px;
