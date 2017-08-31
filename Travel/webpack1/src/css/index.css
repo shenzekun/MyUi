@@ -276,7 +276,7 @@ figure:hover {
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 593px;
-    background-image: url(../../src/img/bg2.jpg);
+    background-image: url(../img/bg2.jpg);
 }
 
 .leftpicture {
@@ -285,7 +285,7 @@ figure:hover {
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 593px;
-    background-image: url(../../src/img/bg3.jpg);
+    background-image: url(../img/bg3.jpg);
 }
 
 section article {
