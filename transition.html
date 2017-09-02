@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全屏图加过渡色</title>
+    <style>
+        .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url(http://book.jirengu.com/jirengu-inc/js-works/css3/bg.jpg) center center no-repeat;
+            background-size: cover;
+        }
+
+        .cover::before {
+            width: 50%;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background: linear-gradient(to right top, rgb(137, 255, 207), rgb(207, 125, 255));
+            opacity: .5;
+        }
+
+        .cover::after {
+            width: 50%;
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to left bottom, rgb(137, 255, 207), rgb(250, 98, 202));
+            opacity: .5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cover"></div>
+</body>
+
+</html>

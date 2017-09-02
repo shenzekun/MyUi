@@ -29,5 +29,6 @@ some small ui example:
 | 新闻瀑布流 | http://shenzekun.cn/MyUi/newsWaterFull.html |
 | 木桶布局  | http://shenzekun.cn/MyUi/Barrel.html |
 | 日历 | http://shenzekun.cn/MyUi/date.html |
-| 加载动画 | http://shenzekun.cn/MyUi/loading.html
+| 加载动画 | http://shenzekun.cn/MyUi/loading.html |
+| 全屏图加过渡色 | http://shenzekun.cn/MyUi/transition.html |
 
