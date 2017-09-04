@@ -170,34 +170,34 @@ body {
     color: #fff;
 }
 
-.carousel {
+.carousel1 {
     position: relative;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
-.carousel .img-ct {
+.carousel1 .img-ct {
     position: absolute;
     overflow: hidden;
 }
 
-.carousel .img-ct img {
+.carousel1 .img-ct img {
     background-size: cover;
 }
 
-.carousel .img-ct>li {
+.carousel1 .img-ct>li {
     float: left;
     width: 100%;
 }
 
-.carousel .img-ct:after {
+.carousel1 .img-ct:after {
     content: '';
     display: block;
     clear: both;
 }
 
-.carousel .arrow {
+.carousel1 .arrow {
     position: absolute;
     top: 50%;
     font-size: 20px;
@@ -212,26 +212,26 @@ body {
     color: #fff;
 }
 
-.carousel .arrow:hover {
+.carousel1 .arrow:hover {
     opacity: .7;
 }
 
-.carousel .pre {
+.carousel1 .pre {
     left: 10px;
 }
 
-.carousel .next {
+.carousel1 .next {
     right: 10px;
 }
 
-.carousel .bullet {
+.carousel1 .bullet {
     position: absolute;
     bottom: 15px;
     width: 100%;
     text-align: center;
 }
 
-.carousel .bullet>li {
+.carousel1 .bullet>li {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -241,7 +241,7 @@ body {
     cursor: pointer;
 }
 
-.carousel .bullet>li.active {
+.carousel1 .bullet>li.active {
     background-color: #fff;
     border: 1px solid #fff
 }
