@@ -1,0 +1,10 @@
+{
+  "globalDevDependencies": {
+    "less": "registry:dt/less#0.0.0+20161212190028",
+    "webpack-dev-server": "registry:dt/webpack-dev-server#1.12.1+20170117213337"
+  },
+  "globalDependencies": {
+    "echarts": "registry:dt/echarts#0.0.0+20161005184000",
+    "react-router-dom": "registry:dt/react-router-dom#4.0.0+20170323201651"
+  }
+}
