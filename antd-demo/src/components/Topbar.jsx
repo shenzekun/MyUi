@@ -1,15 +1,16 @@
 import React from 'react';
 import { Menu, Dropdown, Icon } from 'antd';
+import {Link} from 'react-router-dom'
 const menu = (
     <Menu>
         <Menu.Item>
-            <a href="/#/user">用户中心</a>
+            <Link to="/user">用户中心</Link>
         </Menu.Item>
         <Menu.Item>
-            <a href="/#/setting">系统配置</a>
+            <Link to="/setting">系统配置</Link>
         </Menu.Item>
         <Menu.Item>
-            <a href="/#/login">退出登陆</a>
+            <Link to="/login">退出登陆</Link>
         </Menu.Item>
     </Menu>
 );
