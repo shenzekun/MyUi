@@ -1,7 +1,8 @@
 {
   "globalDevDependencies": {
     "less": "registry:dt/less#0.0.0+20161212190028",
-    "webpack-dev-server": "registry:dt/webpack-dev-server#1.12.1+20170117213337"
+    "webpack-dev-server": "registry:dt/webpack-dev-server#1.12.1+20170117213337",
+    "webpack-merge": "registry:dt/webpack-merge#0.0.0+20161121205806"
   },
   "globalDependencies": {
     "echarts": "registry:dt/echarts#0.0.0+20161005184000",
