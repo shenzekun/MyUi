@@ -1,9 +1,13 @@
 import React from 'react';
 import { Form, Input, Button, notification } from 'antd';
+import PropTypes from 'prop-types';
 import './index.scss';
 const FormItem = Form.Item;
 
 class LoginPage extends React.Component {
+    static contextTypes = {
+        router: PropTypes.object
+    };
     constructor(props) {
         super(props);
         this.handelSubmit = this.handelSubmit.bind(this);
@@ -25,7 +29,7 @@ class LoginPage extends React.Component {
                 console.log(typeof username);
                 if (parseInt(username, 10) === 1 && parseInt(password, 10) === 1) {
                     document.cookie = 'nowKey=' + 'home';
-                    this.props.history.push('/');
+                    this.context.router.history.push('/');
                 } else {
                     this.openNotification('info');
                 }

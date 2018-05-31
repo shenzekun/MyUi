@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import { Router, Route, IndexRoute, Redirect, browserHistory, } from 'react-router';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch, HashRouter} from 'react-router-dom';
 import Login from 'pages/login/index';
 import Init from './main';
 
 ReactDOM.render(
-    <BrowserRouter>
+    <HashRouter>
         <Switch>
             <Route path="/login" component={Login} exact/>
             <Route path="/" component={Init} />
         </Switch>
-    </BrowserRouter>,
+    </HashRouter>,
     document.getElementById('app')
 );

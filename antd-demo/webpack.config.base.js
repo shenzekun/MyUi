@@ -8,6 +8,7 @@ module.exports = {
   entry: path.join(__dirname, 'src', 'router.jsx'),
   output: {
     filename: 'bundle.js',
+    publicPath:'./',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
