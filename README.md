@@ -32,4 +32,5 @@ some small ui example:
 | 加载动画 | http://shenzekun.cn/MyUi/loading.html |
 | 全屏图加过渡色 | http://shenzekun.cn/MyUi/transition.html |
 | 媒体查询 | http://shenzekun.cn/MyUi/media_query.html |
+| 手绘 | http://shenzekun.cn/MyUi/sketch/build/index.html |
 
