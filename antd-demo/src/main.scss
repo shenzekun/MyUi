@@ -2,6 +2,9 @@ body {
     /* font-family: 'Microsoft YaHei'!important; */
     overflow-y: hidden;    
 }
+#app {
+    height: 100%;
+}
 /* 左侧导航固定宽度 */
 #leftMenu {   
     position: absolute;

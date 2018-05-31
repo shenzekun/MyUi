@@ -8,7 +8,7 @@ import Init from './main';
 ReactDOM.render(
     <BrowserRouter>
         <Switch>
-            <Route path="/login" component={Login} />
+            <Route path="/login" component={Login} exact/>
             <Route path="/" component={Init} />
         </Switch>
     </BrowserRouter>,

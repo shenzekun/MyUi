@@ -3,6 +3,7 @@ import Mock from 'mockjs';
 import Topbar from 'components/Topbar';
 import { Title } from 'components/Title';
 import { Table, Icon, Tooltip } from 'antd';
+import './list.scss'
 
 let mock = Mock.mock({
     'data|121-140': [
