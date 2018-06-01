@@ -34,5 +34,5 @@ some small ui example:
 | 媒体查询 | http://shenzekun.cn/MyUi/media_query.html |
 | 手绘 | http://shenzekun.cn/MyUi/sketch/build/index.html |
 | antd demo | http://shenzekun.cn/MyUi/antd-demo/dist/index.html |
-| 图片添加水印 | http://shenzekun.cn/MyUi/watermark.html
+| 图片添加水印 | http://shenzekun.cn/MyUi/watermark.html |
 
