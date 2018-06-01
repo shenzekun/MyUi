@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片添加水印</title>
+</head>
+
+<body>
+    <canvas id="pictureCanvas"></canvas>
+    <input type="text" id="text">
+    <button id="button">添加水印</button>
+</body>
+<script>
+    let img = new Image();
+    img.src = 'http://lorempixel.com/640/480/city'
+    img.onload = function () {
+        let pictureCanvas = document.getElementById('pictureCanvas');
+        let ctx = pictureCanvas.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+        ctx.font = "bold 30px Arial";
+        document.getElementById('button').onclick = function () {
+            ctx.fillText('', 10, 100);
+            let text = document.getElementById('text').value;
+            ctx.fillText(text, pictureCanvas.width - 100, 100);
+        }
+    }
+</script>
+
+</html>
